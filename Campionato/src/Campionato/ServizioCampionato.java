@@ -217,6 +217,7 @@ public class ServizioCampionato {
 			
 			int numeroSquadre=c.getListaSquadre().size();
 	
+			//definisco quante giornate deve avere il campionato
 			int end=(int) Temp.size()/numeroSquadre;
 			int i=0;
 

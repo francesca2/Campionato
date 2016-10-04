@@ -27,7 +27,7 @@ public class MainCampionato {
 		Squadra s1=sc.registraSquadra(c, "Italia");
 		Squadra s2=sc.registraSquadra(c, "Inghilterra");
 		Squadra s3= sc.registraSquadra(c, "Belgio");
-		Squadra s4=sc.registraSquadra(c, "Spagna");
+//		Squadra s4=sc.registraSquadra(c, "Spagna");
 		
 		sc.assegnaGiocatoriASquadra(c, g1, s1);
 		sc.assegnaGiocatoriASquadra(c, g2, s1);
