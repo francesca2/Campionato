@@ -218,21 +218,20 @@ public class ServizioCampionato {
 			int numeroSquadre=c.getListaSquadre().size();
 	
 			int end=(int) Temp.size()/numeroSquadre;
-			int j=0;
 			int i=0;
 
-			while(Calendario.size()<Temp.size())
+			while(Calendario.size()<end)
 			{
-				String s= new String();
+				String s= "";
 
-				while(j<=end*2)
-				{	
-					s=s+Temp.get(j) + "\n";
-					j=j+numeroSquadre*2;
+				for(int j=i; j<Temp.size(); j++)
+				{
+					s=s+Temp.get(j)+ "\n";
+					j=j+numeroSquadre*2-1;
 				}
 				i++;
-				j=i;
 				Calendario.add(s);
+				
 			}
 			return Calendario;
 		}
