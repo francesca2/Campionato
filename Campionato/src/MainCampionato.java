@@ -27,6 +27,7 @@ public class MainCampionato {
 		Squadra s1=sc.registraSquadra(c, "Italia");
 		Squadra s2=sc.registraSquadra(c, "Inghilterra");
 		Squadra s3= sc.registraSquadra(c, "Belgio");
+		Squadra s4=sc.registraSquadra(c, "Spagna");
 		
 		sc.assegnaGiocatoriASquadra(c, g1, s1);
 		sc.assegnaGiocatoriASquadra(c, g2, s1);
@@ -85,15 +86,6 @@ public class MainCampionato {
 		
 		Date data4=gc.getTime();
 		
-//		//Metodo per giocare la partita
-//		Random rdm = new Random();
-//		Int j= rdm.nextInt(1);
-//		if(j==0)
-//		{
-//			
-//		}
-		
-		
 		//Partita 1
 		List<Giocatore> listaReti1 = new ArrayList<Giocatore>();
 		listaReti1.add(g1);
@@ -139,8 +131,18 @@ public class MainCampionato {
 		sc.registraPartita(c, s1, s3, 1, 0, '1', data4, listaReti4, listaEspulsioni4, listaAmmonizioni4);
 		
 		System.out.println(sc.getCapoCannoniere(c).getNome() + " " + sc.getCapoCannoniere(c).getReti());
-		System.out.println(sc.getCampione(c).getNomeSquadra() + " " + sc.getCampione(c).getPunti());
+		System.out.println(sc.getCampione(c).getNomeSquadra() + " " + sc.getCampione(c).getPunti() + "\n");
 //		System.out.println(s2.getNomeSquadra() + " " + s2.getPunti());
+		
+		List<String> calendarioPartite=sc.creaCalendario(c);
+		
+		int i=1;
+		for(String s: calendarioPartite)
+		{
+			System.out.println("Giorno " + i + "\n" + s);
+			i++;
+		}
+		
 	}
 
 }

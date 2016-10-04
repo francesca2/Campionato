@@ -192,4 +192,49 @@ public class ServizioCampionato {
 		return s;
 	}
 	
+	//Metodo per creare il calendario
+		public List<String> creaCalendario(Campionato c)
+		{
+			List<Squadra> squadre = new ArrayList<Squadra>(c.getListaSquadre().values());
+			List<String> Temp = new ArrayList<String>();
+			List<String> Calendario = new ArrayList<String>();
+			
+			//riempie una lista con tutte le coppie squadra casa vs squadra ospite
+			for(Squadra s : squadre)
+			{
+				String str1 = new String(s.getNomeSquadra());
+
+				for(Squadra t : squadre)
+				{
+						String str2 = new String(t.getNomeSquadra());
+						if(!s.getNomeSquadra().equals(t.getNomeSquadra()))
+						{
+						String str = new String(str1 + " vs." + str2);
+						Temp.add(str);
+						}
+				}
+			}
+			
+			int numeroSquadre=c.getListaSquadre().size();
+	
+			int end=(int) Temp.size()/numeroSquadre;
+			int j=0;
+			int i=0;
+
+			while(Calendario.size()<Temp.size())
+			{
+				String s= new String();
+
+				while(j<=end*2)
+				{	
+					s=s+Temp.get(j) + "\n";
+					j=j+numeroSquadre*2;
+				}
+				i++;
+				j=i;
+				Calendario.add(s);
+			}
+			return Calendario;
+		}
+
 }
